@@ -1,0 +1,156 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.header{
+    /* background-image: url('/public/images/doubleKrizma.svg');
+    background-repeat: no-repeat;
+    /* background-size: 100vw 700px; 
+    background-size: cover;*/
+    height:1000px; 
+    
+    /* text-align: center; */
+}
+.headerText{
+    position:relative;
+/* margin:auto;
+top:0px;
+bottom:0px; */
+left:15%;
+color:darkblue;
+padding-top: 0px;
+z-index: 200;
+width:70%;
+
+text-align: center;
+height: 60%;
+}
+.h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: darkblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+.aboutBriefing{
+    font-size: 30px;
+    margin-top: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+.content{
+  
+position: relative;
+left:0px;
+right:0px;
+    margin:  auto;
+    width:100%;
+   
+    top:0px;
+    bottom: 0px;
+    padding: 0px;
+   
+   
+
+}
+.container11{
+    text-align: center;
+    margin:0 100px;
+}
+.row1{
+   
+    margin-left:380px;
+    margin-top: 0px;
+    
+}
+.branches{
+    text-align: center;
+    margin-top: 80px;
+}
+.hr{
+    
+    border-bottom: 10px solid red;
+    border-radius: 20px;
+    width:50%;
+    margin-left: 25%;
+}
+.outlets{
+    
+   margin-left:40px;
+    
+   
+}
+
+
+
+/* Zoom In #1 */
+
+.img{
+  /* width:100%;
+  height:100%;
+  background-color: skyblue; */
+    
+}
+.figure{
+    /* overflow: hidden; */
+    width: 300px;
+	height: 400px;
+    margin: 0;
+   
+	padding: 0;
+}
+.img:hover{
+    width:300px;
+    
+    -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    overflow-x: hidden;
+    -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}
+.card1{
+    overflow: hidden;
+}
+.Slider{
+
+}
+@media (max-width: 800px) {
+    .header{
+        /* background-image: url('/public/images/zinger8.png'); */
+        /* background-repeat: no-repeat; */
+        /* background-size: 100% 100%; */
+        /* background-size: 100% 700px; */
+        
+        
+    
+    }
+    .sliderContainer{
+        
+        margin-top:-450px;
+    }
+    .headerText{
+        top:500px;
+
+       
+    }
+    .Slider{
+      
+        margin-top:400px;
+        height:500px;
+       
+        /* width: 300px; */
+    }
+    .content{
+        left:0px;
+        top:-700px;
+    }
+    .row1{
+        margin-left:0px;
+        margin-top: 0px;
+    }
+    
+    
+    
+  }

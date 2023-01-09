@@ -1,0 +1,53 @@
+.OrderList{
+    position: absolute;
+    width:500px;
+    height:700px;
+    left:0px;
+    right:0px;
+    top:250px;
+    bottom:0px;
+    margin: auto;
+    padding: 0px;
+}
+.paginate{
+   margin-top: 400px;
+}
+
+.tableContainer{
+    
+    margin-top: 150px;
+       display:flex;
+       flex-flow: row wrap;
+      flex-basis: 100%;
+       
+       padding-bottom: 100px;
+      
+   }
+   .item{
+       width:90%;
+       margin: 0 auto;
+       
+   
+   }
+   .table1{
+       width:90vw;
+       border:2px solid gray;
+       
+       
+       /* display:flex;
+       flex-flow: row wrap;
+       flex-basis: 100%;
+       background-color: red; */
+   
+   }
+@media (max-width: 800px) {
+    .OrderList{
+        position: static;
+        width: 300px;
+        margin: 0px;
+    }
+    .table{
+        width:350px;
+    }
+    
+  }

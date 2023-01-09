@@ -1,0 +1,78 @@
+.modal{
+    background-color: red;
+  }
+  .wrapper {
+  position: relative;
+  
+    background-color: skyblue;
+    padding-top: 100px;
+    display: grid;
+    text-align: center;
+    /* column-gap: 20px; */
+    /* grid-template-columns:50% 5%; */
+  height:100vh;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  
+   
+  
+  }
+  .img{
+    border-radius: 50%;
+  }
+  input[type=file]{
+    position: relative;
+    top:0px;
+    left:0px;
+  }
+  input[type=text]{
+    position: relative;
+    top:0px;
+    left:0px;
+    width:150px;
+  }
+  input[type=email]{
+    position: relative;
+    top:0px;
+    left:0px;
+    width:150px;
+  }
+  input[type=password]{
+    position: relative;
+    top:0px;
+    left:0px;
+    width:150px;
+  }
+  .img{
+border-radius: 50%;
+  }
+
+  
+  
+  .item {
+  position: relative;
+    border:2px solid darkblue;
+    height: 350px;
+    /* width:70%; */
+    margin:0px 100px 0px 100px;
+  
+    /* display: inline; */
+    border-radius: 20px;
+    
+  
+  
+  
+  
+  
+  }
+  @media (max-width: 800px) {
+    .wrapper{
+      width:100%;
+      overflow-x: hidden;
+    }
+    .item{
+      width:80%;
+      margin: 0px;
+    }
+    
+  }
+   

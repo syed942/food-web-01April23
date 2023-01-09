@@ -1,0 +1,15 @@
+.wrapper{
+    background-color: skyblue;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+    width:400px;
+    
+}
+@media (max-width: 800px) {
+    
+    .wrapper{
+        width:300px;
+    }
+  }

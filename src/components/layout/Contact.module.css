@@ -1,0 +1,28 @@
+.contactNote{
+    background-color: black;
+    width:100%;
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    height:auto;
+    
+}
+.item{
+    background-color:#FBF7F4;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+.row1{
+    width:90%;
+   margin-left: 10%;
+    
+    text-align: center;
+}
+.col1{
+    margin-left: 0px;
+}
+@media (max-width: 800px) {
+    .col1{
+        margin-left: 0px;
+    }
+}

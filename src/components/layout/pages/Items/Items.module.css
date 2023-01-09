@@ -1,0 +1,40 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+
+    background-color: darkblue;
+    display: grid;
+    width: 100%;
+    /* column-gap: 20px; */
+    overflow: hidden;
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    
+
+
+}
+
+.item {
+
+    background-color: skyblue;
+    height: 350px;
+    /* display: inline; */
+    border-radius: 20px;
+    border: 2px solid red;
+    margin: 20px 20px 20px 20px;
+
+
+
+
+
+}
+.AddCartBtn{
+     position: relative;
+    top:0px; 
+   border-radius: 50%;
+    border: 2px solid red;
+}

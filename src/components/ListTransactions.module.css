@@ -1,0 +1,21 @@
+.wrapper{
+    background-color: darkblue;
+    display: grid;
+    text-align: center;
+    /* column-gap: 20px; */
+    overflow: hidden;
+height:auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+}
+.item{
+    background-color: skyblue;
+    text-align: center;
+    padding-top: 20px;
+    width:300px;
+    height: 350px;
+    /* display: inline; */
+    border-radius: 20px;
+    border: 2px solid red;
+    margin: 20px 0px 20px 0px;
+}
