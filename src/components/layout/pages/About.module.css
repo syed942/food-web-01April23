@@ -12,18 +12,18 @@
     /* text-align: center; */
 }
 .headerText{
-    position:relative;
+    position:absolute;
 /* margin:auto;
 top:0px;
 bottom:0px; */
 left:15%;
 color:darkblue;
-padding-top: 0px;
+top: 400px;
 z-index: 200;
 width:70%;
 
 text-align: center;
-height: 60%;
+height: 80%;
 }
 .h1{
     font-size: 40px;

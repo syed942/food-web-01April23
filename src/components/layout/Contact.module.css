@@ -12,6 +12,37 @@
     padding-top: 50px;
     padding-left: 50px;
 }
+.wrapper {
+
+    background-color: #4b4b4b;
+    display: grid;
+    
+    /* column-gap: 20px; */
+    overflow: hidden;
+height:auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    
+
+
+}
+
+.item1 {
+
+    background-color: #ffffff;
+    width:300px;
+    height: 350px;
+    text-align: center;
+    /* display: inline; */
+    border-radius: 20px;
+    border: 2px solid red;
+    margin: 20px 0px 20px 0px;
+
+
+
+
+
+}
 .row1{
     width:90%;
    margin-left: 10%;
@@ -21,7 +52,15 @@
 .col1{
     margin-left: 0px;
 }
+
+.cellfooter{
+    background-color: blue;
+
+}
 @media (max-width: 800px) {
+    .wrapper{
+        margin-top: 50px;
+    }
     .col1{
         margin-left: 0px;
     }

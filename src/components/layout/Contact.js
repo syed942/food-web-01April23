@@ -206,18 +206,13 @@ alert("contact save successfully")
               id="message" placeholder='Please enter message' required="true" 
               name="message" onChange={handleChange} 
               />
-              {/* <input type="hidden" value={contact.message1} name="messag1"   onChange={ handleChange} /> */}
-              {/* <label style={{position:"relative",left:"-240px"}}>city</label>
-              <input type="text" style={{width:"100%"}}
-              value={contact.city} 
-              id="city" placeholder='Please enter Your city' required="true" 
-              name="city" onChange={handleChange} 
-              /> */}
-              <input type="submit" value="submit"
+           
+              <input type="submit" value="submit" 
+              className='btn btn-md btn-primary'
               
-              style={{position:"relative",top:"30px", 
-              borderRadius:"20px",border:"none",
-              backgroundColor:"#E61A57",width:"100px",height:"30px"}}/>
+              style={{position:"relative",top:"30px", borderRadius:"20px"
+            
+           }}/>
             </form>
            </div>
           </div>
@@ -230,7 +225,133 @@ alert("contact save successfully")
         </div>
       </div>
 
+<div className={styles.wrapper}>
 
+  <div className={styles.item1}>
+    <h3>Lahore</h3>
+    <p><span><h6>Address:</h6> 155-A H Block D.H.A.</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (042) 35766771</span></p>
+     <p><span><h6>Branch:2:</h6> 244-B1  A Block Modal Town</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (042) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+   
+  </div>
+  <div className={styles.item1}>
+  <h3>Karachi</h3>
+    <p><span><h6>Address:</h6> 177 I.I.Chandrigar Road Karachi</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (021) 25766771</span></p>
+     <p><span><h6>Branch:2:</h6> 33-A Tariq Road Karchi</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (021) 2277665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div> 
+  <div className={styles.item1}>
+  <h3>Islamabad</h3>
+    <p><span><h6>Address:</h6> 77-A Blue Area Islamabad.</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (051) 35766771</span></p>
+     <p><span><h6>Branch:2:</h6> 244-B1  F10 Commercial Area</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (051) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+  <div className={styles.item1}>
+  <h3>Rahim Yar Khan</h3>
+    <p><span><h6>Address:</h6> 101-B Shahbaz Pur Road Rahim Yar Khan.</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (068) 35766771</span></p>
+     <p><span><h6>Branch:2:</h6> Abu Dhabi Rd, Rahim Yar Khan, Punjab</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (068) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+  <div className={styles.item1}>
+  <h3>Multan</h3>
+    <p><span><h6>Address:</h6> Sher Shah Road. Multan Cantt. 787 B Block Commercial arae</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (061) 37066771</span></p>
+     <p><span><h6>Branch:2:</h6> University Road Taj Center </span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (061) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+     
+  </div>
+  <div className={styles.item1}>
+  <h3>Sargodha</h3>
+    <p><span><h6>Address:</h6> 132 A University Road Sargodha.</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (048) 9766771</span></p>
+     <p><span><h6>Branch:2:</h6> 99 C Block Satellite Town </span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (048) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+  <div className={styles.item1}>
+  <h3>Bahawalpur</h3>
+    <p><span><h6>Address:</h6> Ahmed Puri Gate Bahawalpur..</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (062) 5766771</span></p>
+     <p><span><h6>Branch:2:</h6> 122-A Noor mahal Road</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (062) 5177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+  <div className={styles.item1}>
+  <h3>Gujranwala</h3>
+    <p><span><h6>Address:</h6> 66-B Commercial Arae Satellite town.
+
+</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (055) 35766771</span></p>
+     <p><span><h6>Branch:2:</h6> 61 Sialkot Road Gujranwala</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (055) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+  <div className={styles.item1}>
+  <h3>Faisalabad</h3>
+    <p><span><h6>Address:</h6> 44-B Commercial Arae Madina town.</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (041) 4766771</span></p>
+     <p><span><h6>Branch:2:</h6> 27 D Chowk Commercial arae Peoples colony faisalbabd</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (041) 5177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+  <div className={styles.item1}>
+  <h3>Comming Soon Rawalpindi</h3>
+    <p><span><h6>Address:</h6> 200 A Raja Bazar Rawalpindi.</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (051) 35766771</span></p>
+     <p><span><h6>Branch:2:</h6> 61 Sadar Cantt. Opp. Pearl Continental Hotels</span></p>
+    <p><span><img src="../images/cellImg.svg " alt="ll"
+    style={{backgroundColor:"blue"}}
+    />  +92 (051) 35177665</span></p>
+     <p><span><h6>Timing:</h6> 02:00 PM - 02:00 AM</span></p>
+  </div>
+</div>
 
     </div>
   )
