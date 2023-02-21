@@ -25,8 +25,8 @@ export const NavBar = ({ logout }) => {
         });
     }
     const ShoppingReducer = () => {
-       // navigate("/listproduct")  //genuine
-       navigate("/listtransactions")
+        // navigate("/listproduct")  //genuine
+        navigate("/listtransactions")
 
         // navigate({
         //     pathname: '/home1',
@@ -54,7 +54,7 @@ export const NavBar = ({ logout }) => {
             search: '?limit=5&&offset=0',
         });
     }
-    const AddProduct=()=>{
+    const AddProduct = () => {
         navigate("/addproduct")
     }
     return (
@@ -76,39 +76,41 @@ export const NavBar = ({ logout }) => {
                         </li> */}
                             <li class="nav-item" style={{ marginLeft: "20px" }}>
 
-                                <Link to="/" className='text-white'>Home</Link>
+                                <Link to="/" className='text-white btn btn-md' style={{ border: "none" }}>Home</Link>
                             </li>
                             <li class="nav-item" style={{ marginLeft: "20px" }}>
 
-                                <Link to="/contact" className='text-white'>Contact Us</Link>
+                                <Link to="/contact" className='text-white btn btn-md'>Contact Us</Link>
                             </li>
-                            <li class="nav-item" style={{ marginLeft: "20px", marginTop: "-5px" }} onClick={HandleLogout} >
+                            <li class="nav-item" style={{ marginLeft: "20px", marginTop: "-5px" }} onClick={HandleLogout}
+                                className="btn btn-md"
+                            >
 
 
                                 <button onClick={logout
-                                } className="btn btn-sm text-white " style={{ borderBottom: "2px solid white" }}>
+                                } className="btn btn-md text-white " >
                                     SignIn
                                 </button>
                             </li>
-                          
+
                             <li class="nav-item" style={{ marginLeft: "20px" }}>
-                            <button onClick={ListTransactionsNew}
-                                        style={{ marginLeft: "20px", border: "none",backgroundColor:"brown" }}
-                                        className="text-white"
-                                    >
-                                        Shop Now
-                                    </button>
-                                
+                                <button onClick={ListTransactionsNew}
+                                    style={{ marginLeft: "20px", border: "none", backgroundColor: "brown" }}
+                                    className="text-white btn btn-md"
+                                >
+                                    Shop Now
+                                </button>
+
                                 {/* <Link to="/listtransactions" className='text-white'>Shop now</Link> */}
-                               
+
                             </li>
                             <li class="nav-item" style={{ marginLeft: "20px" }}>
 
-                                <Link to="/signup" className='text-white'>Signup</Link>
+                                <Link to="/signup" className='text-white btn btn-md'>Signup</Link>
                             </li>
                             <li class="nav-item" className='text-white' style={{ marginLeft: "20px" }}>
 
-                                <Link to="/about" className='text-white'>About Us</Link>
+                                <Link to="/about" className='text-white btn btn-md'>About Us</Link>
                             </li>
 
 
@@ -116,23 +118,35 @@ export const NavBar = ({ logout }) => {
                                 <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Shop Here
                                 </a>
+                              
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    
-                                    <button onClick={AddProduct}
-                                    style={{ marginLeft: "20px", border: "none" }}
+                                <ul style={{display:"block"}}>
+                                    <li>
+                                    <button onClick={AddProduct} className="btn btn-md"
+                                        style={{ marginLeft: "0px", border: "none" }}
                                     >Add Product</button>
-                                    <button onClick={Shopping1}
-                                        style={{ marginLeft: "20px", border: "none" }}
+                                        
+                                    </li>
+                                    <li>
+                                    <button onClick={Shopping1} className="btn btn-md"
+                                        style={{  border: "none" }}
                                     >
                                         Shopping Now
                                     </button>
-                                    <div>
-                                        <button onClick={OrderList}
-                                            style={{ marginLeft: "20px", border: "none" }}
+                                    </li>
+                                    <li>
+                                    <button onClick={OrderList} className="btn btn-md"
+                                            style={{ border: "none" }}
                                         >
                                             OrderList
                                         </button>
-                                    </div>
+                                    </li>
+                                </ul>
+                                   
+                                  
+                                    {/* <div>
+                                       
+                                    </div> */}
 
 
 
@@ -140,7 +154,7 @@ export const NavBar = ({ logout }) => {
                             </li>
                             <li onClick={HandleLogout}>
                                 <button style={{ border: "none", background: "inherit", color: "white" }}
-
+                                    className="btn btn-md"
                                     onClick={logout
                                     }
                                 >Logout  </button>
@@ -156,20 +170,22 @@ export const NavBar = ({ logout }) => {
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul class="navbar-nav " style={{ textAlign: "center", marginLeft: "20px", zIndex: "300" }}>
-                                
+
                                 <li class="nav-item" style={{ marginLeft: "20px" }}>
 
-                                    <Link to="/" className='text-white'>Home</Link>
+                                    <Link to="/" className='text-white btn btn-md' >Home</Link>
                                 </li>
                                 <li class="nav-item" style={{ marginLeft: "20px" }}>
 
-                                    <Link to="/contact" className='text-white'>Contact Us</Link>
+                                    <Link to="/contact" className='text-white btn btn-md'>Contact Us</Link>
                                 </li>
-                                <li class="nav-item" style={{ marginLeft: "20px", marginTop: "-5px" }} onClick={HandleLogout} >
+                                <li class="nav-item"
+                                    className='btn btn-md'
+                                    style={{ marginLeft: "20px", marginTop: "-5px" }} onClick={HandleLogout} >
 
 
                                     <button onClick={logout
-                                    } className="btn btn-sm text-white " style={{ borderBottom: "2px solid white" }}>
+                                    } className="btn btn-md text-white " >
                                         SignIn
                                     </button>
                                 </li>
@@ -182,21 +198,21 @@ export const NavBar = ({ logout }) => {
                              Shop1
                          </button>
                      </li> */}
-                                <li class="nav-item" style={{ marginLeft: "20px"  }}>
-                                {/* <Link to="/listtransactions" className='text-white'>Shop now</Link> */}
+                                <li class="nav-item" style={{ marginLeft: "20px" }} className="btn btn-md">
+                                    {/* <Link to="/listtransactions" className='text-white'>Shop now</Link> */}
                                     <button onClick={ListTransactionsNew}
-                                        style={{backgroundColor:"brown",color:"white",border:"none"}}
+                                        style={{ backgroundColor: "brown", color: "white", border: "none" }}
                                     >
                                         Shopping Now
                                     </button>
                                 </li>
                                 <li class="nav-item" style={{ marginLeft: "20px" }}>
 
-                                    <Link to="/signup" className='text-white'>Signup</Link>
+                                    <Link to="/signup" className='text-white btn btn-md'>Signup</Link>
                                 </li>
                                 <li class="nav-item" className='text-white' style={{ marginLeft: "20px" }}>
 
-                                    <Link to="/about" className='text-white'>About Us</Link>
+                                    <Link to="/about" className='text-white btn btn-md'>About Us</Link>
                                 </li>
 
 
@@ -204,33 +220,23 @@ export const NavBar = ({ logout }) => {
                                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Shop Here
                                     </a>
+                                    
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         {/* <a class="dropdown-item " href="shopping">Shopping</a> */}
                                         {/* <a class="dropdown-item " href="addproduct">Add Product </a> */}
                                         <button onClick={Shopping1}
+                                        className="btn btn-md"
                                             style={{ marginLeft: "20px", border: "none" }}
                                         >
                                             Shopping Now
                                         </button>
-                                        {/* <div>
-                             <button onClick={OrderList}
-                                 style={{ marginLeft: "20px", border: "none" }}
-                             >
-                                 OrderList
-                             </button>
-                             </div> */}
-
-                                        {/* <a class="dropdown-item " href="orderlist">Order List </a> */}
-                                        {/* <a class="dropdown-item " href="shopping1/limit=5&&offset=0">shopping1</a> */}
-
-                                        {/* <button
-                         class="dropdown-item "
-                         onClick={GoShopping}>Shopping1</button> */}
+                                      
 
                                     </div>
                                 </li>
                                 <li onClick={HandleLogout}>
                                     <button style={{ border: "none", background: "inherit", color: "white" }}
+                                        className="btn btn-md"
 
                                         onClick={logout
                                         }

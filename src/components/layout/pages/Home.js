@@ -19,6 +19,10 @@ export const Home = () => {
   //search, '?limit=10',)
 
   },[])
+  useEffect(()=>{
+    localStorage.removeItem("name")
+
+  },[])
   
   
   return (

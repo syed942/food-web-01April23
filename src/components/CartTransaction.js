@@ -34,7 +34,7 @@ const HandleOrder=(prod)=>{
   return (
     <div className={styles.wrapper}>
         <div>
-       
+       {cart.length === 0 ? "cart is empty": null}
         {/* <button>{CalculateTotal1(cart)}</button> */}
         <div >
             {

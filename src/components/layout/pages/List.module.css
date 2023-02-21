@@ -6,7 +6,7 @@
 
 
 .tableContainer{
-    
+    position: absolute;
  margin-top: 150px;
     display:flex;
     flex-flow: row wrap;
@@ -71,22 +71,33 @@ svg{
     position:relative;
  background: none;
     width:5%;
-    color:blue;
+    color:gray;
    outline: none;
    border: none;
-    left: 130px;
+    left: 0px;
    
    
 }
+.searchInput{
+    position: relative;
+    width:300px;
+    height:40px;
+    border:none;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 20px;
+    /* border:2px solid red; */
 
+
+}
 
 .LeftArrowIcon{
     position: relative;
     background-color: white;
     color:blue;
     border: none;
-    width:34.6%;
-    right: 230px;
+    width:30.6%;
+    right: 290px;
 }
 .addBtn{
     width:35%;
@@ -129,7 +140,7 @@ svg{
 .itemp{
     background-color: red;
 }
-input[type=email]{
+/* input[type=email]{
     position: relative;
    width:90%;
     margin-left: 50px;
@@ -138,68 +149,12 @@ input[type=email]{
 
     
     
+     } */
+     @media (max-width: 800px) {
+        .tableContainer{
+         
+       
+            z-index: -1;
+        }
      }
-    
-     @media (max-width: 360px){
-       .table{
-      
-        width:350px;
-        
-       
-    
-       }
-       .item{
-       width: 40%;
-       }
-       .tableContainer{
-        /* width:100%; */
-       }
-       /* .searchIcon{
-       
-        left: 100px;
-       
-       
-    } */
-       
-        
-      
-       
-     }
-        @media only screen and (min-width: 361px) and (max-width: 600px) {
-           
-              
-            
-     } 
-     @media only screen and (min-width: 414px) and (max-width: 700px) {
-       
- } 
- @media only screen and (min-width: 701px) and (max-width: 1200px) {
   
-    
-} 
-@media only screen and (min-width: 1201px) and (max-width: 00px) {
-      
-    
-} 
-     
-   
-@media only screen and (min-width: 414px) and (max-width: 600px)  {
-  
-   
-  
-   }
-   
- 
-
-
-@media only screen and (min-width: 601px) and (max-width: 1200px)  {
-   
-   
- }
- 
- 
- @media only screen and (min-width: 1201px) {
-    
-    
-
- }

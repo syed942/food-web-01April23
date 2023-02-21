@@ -70,6 +70,7 @@ export const UpdateUserModal=(props)=> {
       <Modal
         isOpen={props.IsModalOpened1}
         onAfterOpen1={e => afterOpenModal(e)}
+        className={styles.modal}
        // style={customStyles}
       //  ariaHideApp={false}
       
@@ -87,6 +88,7 @@ export const UpdateUserModal=(props)=> {
                 </td>
                 <td>
                 <input type="text" value={user.Username} 
+                className={styles.input}
           id="name1"
           name="name1" onChange={(e)=>setUser({...user,Username:e.target.value})} />
                 </td>
@@ -100,7 +102,9 @@ export const UpdateUserModal=(props)=> {
                 <td>
                 <input type="password" value={user.userPassword}
           id="password"
-          name="password" onChange={(e)=>setUser({...user,userPassword:e.target.value})} />
+          name="password" onChange={(e)=>setUser({...user,userPassword:e.target.value})} 
+          className={styles.input}
+          />
                 </td>
               </tr>
             </table>
@@ -110,9 +114,12 @@ export const UpdateUserModal=(props)=> {
          
          
           
-        <input type="submit" value="Save Changes"  className='btn btn-md btn-success'/>
+        <input type="submit" value="Save Changes"  className='btn btn-md btn-success'
+        style={{position:"relative",width:"100%"}}
+        />
         <span> <button onClick={e => onModalClose1(e)}
         className="btn btn-md btn-warning"
+        style={{position:"relative",width:"100%"}}
         >Cancel</button></span>
         
 </form>
@@ -120,10 +127,11 @@ export const UpdateUserModal=(props)=> {
           <div className={styles.item}>
             <form onSubmit={e => props.editImg(e,user)}>
             <input type="file" name="name" onChange={onChangeImg} />
-          <img src={user.Imgname} alt='File preview' height="200px" width="200px" className={styles.img}
+          <img src={user.Imgname} alt='File preview' height="100px" width="100px" className={styles.img}
         />
         
-        <input type="submit" value="Save New Image" 
+        <input type="submit" value="Save New Image" style={{position:"relative",width:"100%"}}
+        className='btn btn-md btn-success'
           
           onClick={(e)=>props.editImg(e,user)}
        

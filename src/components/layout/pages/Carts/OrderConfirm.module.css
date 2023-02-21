@@ -20,6 +20,20 @@ input{
     position: relative;
     width:90%;
 }
+.orderConfirm{
+    position:absolute;left:-100px;
+    top:10px;
+}
+.confirmOrderMessage{
+    width:300px;
+  background-color: skyblue;
+       margin-left: 80%;
+        
+        border:2px solid red;
+        
+       border-radius: 20px;
+
+}
 @media (max-width: 800px) {
     .main{
         position: static;
@@ -29,5 +43,14 @@ input{
       width:80%;
       margin: 0px;
     }
+    .confirmOrderMessage{
+        margin-left: 10%;
+    }
+    .orderConfirm{
+        position: sticky;
+        left: 25px;
+        top: 86px;
+    }
+    
     
   }

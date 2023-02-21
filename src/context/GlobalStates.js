@@ -8,7 +8,7 @@ const initialState = {
  //  shoppingList : [{id:1,name:"asad",city:"lahore"},{id:2,name:"asad shsh",city:"lahore"}],
   //cartItems : [],
   products: null,
-   adminUser:"ishfaq",
+   adminUser:"ishfaq@foodweb.com",
    adminPassword:"admin",
   // adminOk:null
  //  counter:33

@@ -16,7 +16,7 @@ export const About = () => {
           </p>
          
         </div>
-        <Slider />
+        <Slider  style={{marginTop:"50px"}}/>
         </div>
       
 

@@ -6,7 +6,7 @@ import Datetime from 'react-datetime';
 import styles from '../components/layout/pages/Carts/OrderConfirm.module.css'
 import axios from 'axios'
 export const ConfirmOrder = () => {
-    // const [odate,setOdate] =useState("");
+    const [ordermsg, setOrderMsg] = useState(false);
     const navigate = useNavigate()
     const loc = useLocation()
     const id = loc.state.id;
@@ -37,7 +37,7 @@ export const ConfirmOrder = () => {
     }
 
     const HandleSubmit = (e) => {
-        // e.preventDefault();
+         e.preventDefault();
 
         console.log(Odate);
         //console.log("form order summitte",OrderForm,Odate.toLocaleString())
@@ -58,8 +58,11 @@ export const ConfirmOrder = () => {
                 console.log(res.data);
             })
         //alert(`form is submittes ${OrderForm}`);
-        navigate("/listtransactionsnew")
-      // alert("order submitted successfully")
+        //  navigate("/listtransactionsnew")
+        //  console.log("order placed successfully")
+        //alert("order submitted successfully")
+        //navigate("/listtransactionsnew")
+    setOrderMsg(true)
     }
     const HandleChange = (e) => {
         setOrderForm({ ...OrderForm, [e.target.name]: e.target.value })
@@ -73,12 +76,20 @@ export const ConfirmOrder = () => {
 
     return (
         <div>
+            
 
             {/* <h3>Amount:{OrderForm.Amount}</h3>
              <h3>Product Id: {OrderForm.id}</h3>
              <h3>Quantity: {OrderForm.quantity}</h3>
              <h4>Date order: {Odate.toLocaleString()}</h4> */}
             <div className={styles.main}>
+            <div onClick={()=>setOrderMsg(!ordermsg)}  className={styles.orderConfirm}>
+                {
+                     ordermsg ? <div 
+                     className={styles.confirmOrderMessage}
+                     >Your Order placed successfully</div> :""
+                }
+            </div>
                 <h4 style={{ textAlign: "center" }}>Order Particulars</h4>
                 <form onSubmit={(e) => HandleSubmit(e)}>
                     <table align='center' className={styles.table}>
@@ -90,7 +101,8 @@ export const ConfirmOrder = () => {
                             </td>
                             <td>
                                 <input type="text" id="name" style={{ width: "90%" }}
-                                    className="form-control"
+                                    className="form-control" required
+                                    onClick={()=> setOrderMsg(false)}
                                     value={OrderForm.name} name="name" onChange={HandleChange} />
                             </td>
                         </tr>
@@ -102,7 +114,7 @@ export const ConfirmOrder = () => {
                             </td>
                             <td>
                                 <input type="text" id="address" style={{ width: "90%" }}
-                                    className="form-control"
+                                    className="form-control" required
                                     value={OrderForm.daddress} name="daddress" onChange={HandleChange} />
                             </td>
                         </tr>
@@ -115,7 +127,7 @@ export const ConfirmOrder = () => {
                             </td>
                             <td>
                                 <input type="text" id="cell" style={{ width: "90%" }}
-                                    className="form-control"
+                                    className="form-control" required
                                     value={OrderForm.contactNo} name="contactNo" onChange={HandleChange} />
                             </td>
                         </tr>
@@ -129,7 +141,7 @@ export const ConfirmOrder = () => {
                             <td>
                                 <input type="number" id="ItemId" style={{ width: "90%" }}
                                     className="form-control"
-                                    value={OrderForm.id} name="id"  />
+                                    value={OrderForm.id} name="id" />
                             </td>
                         </tr>
                         <tr>
@@ -142,7 +154,7 @@ export const ConfirmOrder = () => {
                             <td>
                                 <input type="number" id="price" style={{ width: "90%" }}
                                     className="form-control"
-                                    value={OrderForm.price} name="price"  />
+                                    value={OrderForm.price} name="price" />
                             </td>
                         </tr>
                         <tr>
@@ -155,7 +167,7 @@ export const ConfirmOrder = () => {
                             <td>
                                 <input type="number" id="quantity" style={{ width: "90%" }}
                                     className="form-control"
-                                    value={OrderForm.quantity} name="quantity"  />
+                                    value={OrderForm.quantity} name="quantity" />
                             </td>
                         </tr>
                         <tr>
@@ -168,10 +180,10 @@ export const ConfirmOrder = () => {
                             <td>
                                 <input type="number" id="amount" style={{ width: "90%" }}
                                     className="form-control"
-                                    amount value={OrderForm.Amount} name="Amount"  />
+                                    amount value={OrderForm.Amount} name="Amount" />
                             </td>
                         </tr>
-                        
+
                         <tr>
                             <td>
                                 <label htmlFor='date'>
@@ -189,7 +201,7 @@ export const ConfirmOrder = () => {
                         <tr>
                             <td>
                                 <button type="submit" className='btn btn-md btn-success'  >save</button>
-                                <button onClick={() => navigate("/shopping1")} className='btn btn-md btn-danger' >
+                                <button onClick={() => navigate("/listtransactionsnew")} className='btn btn-md btn-danger' >
                                     Cancel
                                 </button>
                             </td>

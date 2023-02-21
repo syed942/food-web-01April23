@@ -128,7 +128,7 @@ right:0px;
     }
     .sliderContainer{
         
-        margin-top:-450px;
+        margin-top:0px;
     }
     .headerText{
         top:500px;
@@ -145,6 +145,12 @@ right:0px;
     .content{
         left:0px;
         top:-700px;
+    }
+    .aboutBriefing{
+        font-size: 20px;
+        margin-top: 0px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
     }
     .row1{
         margin-left:0px;

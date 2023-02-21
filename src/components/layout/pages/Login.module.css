@@ -34,6 +34,30 @@
     background-color: red; */
 
 }
+.googleLoginBtn{
+    position: relative;
+    width:100%;
+}
+.logoutBtn{
+    position: relative;
+    width: 100%;
+}
+.loginFailed{
+    /* background-color:inherit; */
+    /* border: 5px solid red; */
+    color:red;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2px solid red;
+    border-radius: 20px;
+    /* margin-top: 150px; */
+    margin-left: 40%;
+    padding-left: 10px;
+    padding-top: 10px;
+    width:300px;
+    /* z-index: 500; */
+    height:50px;
+}
 @media (max-width: 800px) {
     .table{
         width:350px;
@@ -42,6 +66,9 @@
         width:100%;
         top:200px;
         z-index: -1;
+    }
+    .loginFailed{
+        margin-left: 10%;
     }
 }
 @media (max-width: 360px){

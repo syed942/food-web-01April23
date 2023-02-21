@@ -8,9 +8,15 @@ export const Welcome = () => {
   const name = location.state.name;
   const email = location.state.email;
     console.log(name)
+    const logoutUser=()=>{
+      localStorage.clear()
+    }
   return (
     <div><h3>Welcome Mr./Mrs. {name}</h3>
+      <div onClick={logoutUser}>
       <Link to="/login">Sign In</Link>
+      </div>
+     
     </div>
   )
 }

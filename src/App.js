@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate, createBrowserRouter } from 'react-router-dom'
 import { Home } from './components/layout/pages/Home';
 import { List } from './components/layout/pages/List';
@@ -30,16 +30,19 @@ import { ConfirmOrder } from './components/ConfirmOrder';
 
 const App = () => {
 
-
   const logout = () => {
     localStorage.clear();
 
   }
   const Logout = () => {
+   
+   
     localStorage.clear();
+  
 
 
   }
+  
   return (
     <div>
 

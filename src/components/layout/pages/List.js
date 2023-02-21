@@ -48,13 +48,17 @@ export const List = () => {
   //const {name}= location.state.name;
   // console.log(location.state.name)
   const [data, setData] = useState([]);
+  const [data1, setData1] = useState([]);
   const [skeleton, setSkeleton] = useState(true)
   const [numberOfButtons, setNUmberOfButtons] = useState(0);
   const [editUser, setEditUser] = useState({});
   const [currentItems, setCurrentItems] = useState([])
   const [ProductId, setPid] = useState(0)
   const [limit, setLimit] = useState(parsed.limit)
+  const [emailDuplicateError,setEmailDuplicateError] = useState(false)
+  const [emailDuplicateMsg,setEmailDuplicateMsg] = useState("")
   console.log(data)
+  console.log("data1 is ",data1)
   // const [category,setCategory]=useState("plz enter category")
   // const [searchId,setSearchId]=useState(0)
   const [showPerPage, setShowPerPage] = useState(limit)
@@ -153,7 +157,14 @@ export const List = () => {
   function openFromParent1() {
     setIsOpen1(true);
   }
+  const FetchData = async () => {
+    const aa = await axios.get(`http://localhost/ReactApps/food-web/UserList.php`)
+    setData1(aa.data)
 
+  }
+  useEffect(() => {
+    FetchData()
+  }, [])
   function handleCloseModal(event, data) {
     console.log(event, data);
     setIsOpen(false);
@@ -217,13 +228,7 @@ export const List = () => {
     //const result = await axios.get(`http://localhost/ReactApps/food-web/SingleUser.php/?userId=${form.id}`);
     setCurrentItems(result.data)
 
-    // console.log("form is submitted", form)
-
-    // // const user = data.filter((user) => user.email === form.email && user.password === form.password)
-    // const user = data.filter((user) => user.email === form.email)
-    // console.log(user[0].email)
-    // setData(user)
-    //navigate("update")
+    
 
 
   }
@@ -231,22 +236,22 @@ export const List = () => {
     console.log(user.email)
     console.log("update is pressed")
 
-    // navigate("update", {
-    //   state: {
-    //     email: user.email,
-    //     name:user.name,
-    //     image:user.image,
-    //     password:user.password,
-    //  //  handleChange:{handleChange}
-
-    //   }
-    // })
+   
   }
 
   const onAdd = (event, user,form1) => {
-    const data1 = [...user.data]
+   // const data1 = [...user.data]
     event.preventDefault()
-    console.log(event.target)
+    const user1Already= data1.find(item=> item.email === user.email)
+   // console.log(event.target)
+    if(user1Already){
+      console.log("duplicate email")
+      setEmailDuplicateError(true)
+      setEmailDuplicateMsg("Email already exists")
+    }
+    else{
+console.log("first time email")
+    
     //console.log(num)
     console.log("add is pressed")
     console.log(user.email)
@@ -279,6 +284,7 @@ navigate("/");
     // setData(res.data);
 
   }
+}
   const onEdit = async (event, user) => {
     event.preventDefault()
     console.log("edit use data is", user)
@@ -344,9 +350,12 @@ navigate("/");
 
   const handleDelete = async (email) => {
     console.log("id is ", email)
-    const result = await axios.delete(`http://localhost/ReactApps/food-web/DeleteUser.php/?email=${email}`);
-    setData(result.data)
-    window.location.reload(false);
+    if(window.confirm("do u really want to delete ")){
+      const result = await axios.delete(`http://localhost/ReactApps/food-web/DeleteUser.php/?email=${email}`);
+      setData(result.data)
+      window.location.reload(false);
+    }
+   
   }
   const handleChangeChk = (e) => {
 
@@ -383,7 +392,9 @@ navigate("/");
     let newList = [...currentItems]
     const a = currentItems.filter((item) => item?.isChecked === true)
     console.log("checked array", a)
-    for (let i = 0; i < a.length; i++) {
+    if (window.confirm("Do you really want to delete seleted users?")) {
+     // window.open("exit.html", "Thanks for Visiting!");
+     for (let i = 0; i < a.length; i++) {
       const result = await axios.delete(`http://localhost/ReactApps/food-web/DeleteUser.php/?email=${a[i].email}`);
       // setData(result.data)
 
@@ -396,6 +407,20 @@ navigate("/");
 
     }
     setCurrentItems(newList)
+    }
+    // for (let i = 0; i < a.length; i++) {
+    //   const result = await axios.delete(`http://localhost/ReactApps/food-web/DeleteUser.php/?email=${a[i].email}`);
+    //   // setData(result.data)
+
+    //   const ind = newList.findIndex(el => el.email === a[i].email)
+    //   newList.splice(ind, 1)
+    //   // const DeleteOne=async()=>{
+
+
+    //   // }
+
+    // }
+    // setCurrentItems(newList)
   }
   const DeleteAll = async () => {
     const result = await axios.delete(`http://localhost/ReactApps/food-web/DeleteAllUsers.php`);
@@ -419,10 +444,11 @@ navigate("/");
 {/* <NavBar logout={logout} /> */}
       <div className={styles.searchbar}>
         <div className={styles.searchBarItem}>
+         
           <form onSubmit={handleSubmit}>
             <input type="email" value={form.email} name="email" onChange={handleChange}
 
-              placeholder="Search by Email here!"
+              placeholder="Search by Email here!" className={styles.searchInput}
 
             />
 
@@ -660,6 +686,8 @@ navigate("/");
           handleClick={onAdd}
           IsModalOpened={modalIsOpen}
           onCloseModal={handleCloseModal}
+          emailDuplicateError={emailDuplicateError}
+          emailDuplicateMsg={emailDuplicateMsg}
           onAfterOpen={handleAfterOpen}
         />
         <UpdateUserModal

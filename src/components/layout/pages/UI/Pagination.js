@@ -36,9 +36,9 @@ export const Pagination = ({showPerPage ,onPageChange,numberOfButtons1,
                 }
     
             } else if(type==="next"){
-       if(numberOfButtons === counter){
+      // if(numberOfButtons === counter){
           
-      // if(Math.ceil(total/showPerPage) === counter){
+       if(Math.ceil(total/showPerPage) === counter){
                 console.log(counter)
                 console.log(numberOfButtons)
            setCouter(counter )

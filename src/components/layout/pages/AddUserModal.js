@@ -69,8 +69,9 @@ export const AddUserModal=(props)=> {
       <Modal
         isOpen={props.IsModalOpened}
         onAfterOpen={e => afterOpenModal(e)}
+        className={styles.modal}
       // style={customStyles}
-       
+     //  style={{marginTop:"100px"}}
         
      
       
@@ -83,7 +84,9 @@ export const AddUserModal=(props)=> {
         {/* <div className="row "   > */}
       <div  className={styles.wrapper} >
       <div  className={styles.item}  >
-        
+      {
+           props.emailDuplicateError? <div style={{border:"2px solid red"}}>{props.emailDuplicateMsg}</div>:"" 
+          }
         {/* <div className="col-sm-6 col-md-5"   > */}
              <form onSubmit={event => props.handleClick(event,user,form1)}  ref={form1} >
           
@@ -91,27 +94,39 @@ export const AddUserModal=(props)=> {
               <table>
                 <br/>
                 <tr>
-                  <td><label htmlFor='name1'>Name:</label></td>
+                  <td style={{textAlign:"left"}}><label htmlFor='name1' className={styles.label}>Name:</label></td>
                   <td ><input type="text" value={user.name1} 
+                  style={{
+                    width: "120%", marginLeft: '20px', paddingLeft: "15px", borderRadius: "10px", outline: "none", border: "none"
+                    , backgroundColor: "#c7ecee"
+                  }}
             id="name1" placeholder='Please enter Your Name' required="true" 
             name="name1" onChange={handleChange} /></td>
                 </tr>
                 <br/>
                 <tr>
-                  <td>
-                  <label htmlFor='email'>Email</label>
+                  <td style={{textAlign:"left"}}>
+                  <label htmlFor='email' className={styles.label}>Email</label>
                   </td>
                   <td> <input type="email" value={user.email} required="true" 
+                  style={{
+                    width: "120%", marginLeft: '20px', paddingLeft: "15px", borderRadius: "10px", outline: "none", border: "none"
+                    , backgroundColor: "#c7ecee"
+                  }}
             id="email" placeholder='Please enetr Your Email'
             name="email" onChange={handleChange} /></td>
                 </tr>
                 <br/>
                 <tr>
-                  <td>
-                  <label htmlFor='password'>Password</label>
+                  <td style={{textAlign:"left"}}>
+                  <label htmlFor='password' className={styles.label}>Password</label>
                   </td>
                   <td>
                   <input type="password" value={user.password} required="true" 
+                  style={{
+                    width: "120%", marginLeft: '20px', paddingLeft: "15px", borderRadius: "10px", outline: "none", border: "none"
+                    , backgroundColor: "#c7ecee"
+                  }}
             id="password"
             name="password" onChange={handleChange} />
                   </td>
