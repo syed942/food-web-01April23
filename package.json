@@ -34,17 +34,24 @@
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "serve": "^14.2.0",
     "styled-components": "^5.3.6",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+     "start": "react-scripts start",
+    
+     "test": "react-scripts test",
+     "eject": "react-scripts eject",
+
+
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
+
+  
   "eslintConfig": {
     "extends": [
       "react-app",
