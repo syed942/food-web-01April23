@@ -20,35 +20,14 @@ import CommonProvider from './context/common';
 import CheckoutProvider from './context/checkout';
 import Header from './components/Header';
 import { ListItems } from './components/ListItems';
-import  {GlobalProvider } from './context/GlobalStates';
+import { GlobalProvider } from './context/GlobalStates';
 import { Object } from './components/Object';
 import { ProductsDispatchContext, TransactionContextProvider } from './context/TransactionContext';
 import { ListTransactions } from './components/ListTransactions';
-
-//import Home1 from './components/layout/pages/Home1';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   {/* <ProductsDispatchContext> */}
-  //   <TransactionContextProvider>
-  //       <ListTransactions/>
-  //     </TransactionContextProvider>
-  //   {/* </ProductsDispatchContext> */}
-      
-       
-           
-       
-  // </React.StrictMode>
   <React.StrictMode>
-  
-     <App/>
-         
-    
- 
-</React.StrictMode>
+    <App />
+  </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

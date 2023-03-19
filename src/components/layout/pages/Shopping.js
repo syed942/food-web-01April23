@@ -11,6 +11,7 @@ import { Items } from './Items/Items';
 import Carts from './Carts/Carts';
 import styles from './Items/Items.module.css'
 import { Paginate } from './UI/Paginate';
+import { Paginate1 } from './UI/Paginate1';
 
 //import { Drawer,List, ListItem, ListItemText } from '@material-ui/core'
 
@@ -79,17 +80,18 @@ console.log(data)
         {/* <button className='btn btn-md btn-success'>hello</button>
         <i className= " fa fa-eye" ></i> */}
       <header style={{backgroundColor:"skyblue"}}>
-      <IconButton aria-label="cart" onClick={()=>setOpenDrawer(true)}>
+      {/* <IconButton aria-label="cart" onClick={()=>setOpenDrawer(true)}>
       <Badge badgeContent={CalculateTotal1(cartItem).toFixed(0)} color="secondary">
         <ShoppingCartIcon />
       </Badge>
-    </IconButton>
+    </IconButton> */}
         
       </header>
-      <div className={styles.wrapper}>{
+      {/* <div className={styles.wrapper}>{
         data?.map(item=> 
        ( <Items item={item} addToCart={handleAddToCart}/>))
-      }</div>
+      }
+      </div> */}
       {/* {
         data?.map(item=> 
        ( <Items item={item} addToCart={handleAddToCart}/>))
@@ -124,7 +126,7 @@ console.log(data)
 
           
              
-         <Paginate items={data} />
+         <Paginate1 items={data} />
       
 </div>
     </div>

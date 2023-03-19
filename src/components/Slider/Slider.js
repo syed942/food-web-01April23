@@ -31,7 +31,7 @@ export default function Slider() {
         setSlideIndex(index)
     }
     useEffect(() => {
-        setInterval(() => {
+        setTimeout(() => {
             nextSlide(slideIndex)
           
         }, 6000);
@@ -51,7 +51,7 @@ export default function Slider() {
                     <>
                    
                     
-                        <img src={obj.image} alt="ll"/>
+                        <img src={obj.image} alt="ll" className={styles.image}/>
                     </>
                       
                         

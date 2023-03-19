@@ -202,7 +202,7 @@ export const ConfirmOrder = () => {
                             <td>
                                 <button type="submit" className='btn btn-md btn-success'  >save</button>
                                 <button onClick={() => navigate("/listtransactionsnew")} className='btn btn-md btn-danger' >
-                                    Cancel
+                                    More Order
                                 </button>
                             </td>
                             <td>

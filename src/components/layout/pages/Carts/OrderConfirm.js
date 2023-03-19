@@ -135,7 +135,7 @@ export const OrderConfirm = () => {
                             <td>
                                 <input type="number" id="ItemId" style={{width:"90%"}}
                                 className="form-control"
-                                value={OrderForm.id} name="id" onChange={HandleChange} />
+                                value={OrderForm.id} name="id"  />
                             </td>
                         </tr>
                         <tr>
@@ -148,7 +148,7 @@ export const OrderConfirm = () => {
                             <td>
                                 <input type="number" id="amount" style={{width:"90%"}}
                                 className="form-control"
-                                amount value={OrderForm.Amount} name="Amount" onChange={HandleChange} />
+                                amount value={OrderForm.Amount} name="Amount"  />
                             </td>
                         </tr>
                         <tr>
@@ -161,7 +161,7 @@ export const OrderConfirm = () => {
                             <td>
                                 <input type="number" id="quantity" style={{width:"90%"}}
                                 className="form-control"
-                                value={OrderForm.quantity} name="quantity" onChange={HandleChange} />
+                                value={OrderForm.quantity} name="quantity"  />
                             </td>
                         </tr>
                         <tr>

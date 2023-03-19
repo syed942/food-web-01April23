@@ -39,7 +39,7 @@ export const About = () => {
             <div class=" col-md-5 " >
 
               <div className="card" style={{ width: "18rem" }}>
-                <img src="../images/96701-Ceo.svg" class="card-img-top" alt="..." />
+                <img src="../images/96701-Ceo.svg" class="card-img-top" alt="..." width="200px" height="200px" />
                 <div className="card-body">
                   <h5 className="card-title">Mian AAmir Qayyum</h5>
                   <p className="card-text">Founnder Food Web.</p>
@@ -70,7 +70,7 @@ export const About = () => {
             <div class=" col-md-5 " >
 
               <div className="card" style={{ width: "18rem" }}>
-                <img src="../images/SEO.svg" class="card-img-top" alt="..." style={{borderRadius:"50%"}} />
+                <img src="../images/SEO.svg" class="card-img-top" alt="..." style={{borderRadius:"50%"}} width="200px" height="200px"  />
                 <div className="card-body">
                   <h5 className="card-title">Syed Sibtul Hasnain</h5>
                   <p className="card-text">CEO Food Web.</p>
@@ -105,7 +105,9 @@ export const About = () => {
             <div class=" col-md-5 " >
 
               <div className="card" style={{ width: "18rem" }}>
-                <img src="../images/DirectorStrategy.svg" class="card-img-top" alt="..." style={{borderRadius:"50%"}} />
+                <img src="../images/DirectorStrategy.svg" class="card-img-top" alt="..." style={{borderRadius:"50%"}} 
+                width="200px" height="200px" 
+                />
                 <div className="card-body">
                   <h5 className="card-title">Muneer Chughtai</h5>
                   <p className="card-text">Operation Manager.</p>
@@ -140,7 +142,9 @@ export const About = () => {
             <div class=" col-md-5 " >
 
               <div className="card" style={{ width: "18rem" }}>
-                <img src="../images/Director.svg" class="card-img-top" alt="..." style={{borderRadius:"50%"}} />
+                <img src="../images/Director.svg" class="card-img-top" alt="..." style={{borderRadius:"50%"}}
+                width="200px" height="200px" 
+                />
                 <div className="card-body">
                   <h5 className="card-title">Mian Khalid Meer</h5>
                   <p className="card-text">Director Strategy.</p>

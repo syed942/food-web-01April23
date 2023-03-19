@@ -77,7 +77,7 @@ const handleLimit=(e)=>{
      setItemOffset(newOffset);
    
      navigate({
-      pathname: '/shopping1',
+      pathname: '/',
       search: "?" + new URLSearchParams({ limit: limit }).toString() + "&&" + new URLSearchParams({ offset: newOffset }).toString()
     })
    }
@@ -90,7 +90,7 @@ const handleLimit=(e)=>{
   // },[])
   const changeUrl = () => {
     navigate({
-      pathname: '/shopping1',
+      pathname: '/',
       search: "?" + new URLSearchParams({ limit: limit }).toString() + "&&" + new URLSearchParams({ offset: itemOffset }).toString()
     })
   }
@@ -126,6 +126,9 @@ const handleLimit=(e)=>{
     console.log(data)
     const handleAddToCart=(clickedItem)=>{
     //  setOpenDrawer(true)
+    let products=[];
+    products.push(clickedItem.productId)
+    console.log("products ids are", products)
       setCartItem(prev=>{
         const isItemInCart=prev.find(item=>item.productId===clickedItem.productId)
         if(isItemInCart){
@@ -265,7 +268,7 @@ removeFromCart={handleRemoveFromCart} />
    </>)
       
   }
-export const Paginate = ({initialPage,items }) => {
+export const Paginate1 = ({initialPage,items }) => {
     console.log(items)
     console.log(initialPage)
     
