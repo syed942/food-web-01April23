@@ -10,12 +10,23 @@ function AppReducerNew(state, action) {
             //  const ok=isOld.productId;
             console.log("items already existed", isOld)
             let a = 3;
+            // setCartItem(prev=>{
+            //     const isItemInCart=prev.find(item=>item.productId===clickedItem.productId)
+            //     if(isItemInCart){
+            //       return prev.map(item=> item.productId===clickedItem.productId?{...item,amount:item.amount +1}: item
+            //       );
+            //     }
+            //     return [...prev,{...clickedItem,amount:1}]
+            //   })
             if (isOld) {
-                return {
-                    ...state,
-                    //state.cart.map(item=> item.productId===clickedItem.productId?{...item,amount:item.amount +1}: item)
-                    cart: [{ ...action.payload, quantity1: action.payload.quantity1 + 1 }]
-                }
+               // if(action.payload.productId === isOld.productId){
+                    return {
+                        ...state,
+                        //state.cart.map(item=> item.productId===clickedItem.productId?{...item,amount:item.amount +1}: item)
+                    //cart: return(cart.map(el=>{el.productId === action.payload.productId? { ...action.payload, quantity1: action.payload.quantity1 + 1 }:action.payload}))
+                       cart: [{ ...action.payload, quantity1: action.payload.quantity1 + 1 }] // exact true
+                    }                   
+               
 
             }
             else {

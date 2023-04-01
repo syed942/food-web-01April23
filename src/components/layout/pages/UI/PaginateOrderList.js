@@ -17,7 +17,7 @@ import ReactDOM from 'react-dom';
 import { Items } from '../Items/Items';
 import Carts from '../Carts/Carts';
 import { useNavigate } from 'react-router-dom';
-function Items1({ items
+function Items1({ items,TotalSal
   
   }) {
       const navigate=useNavigate()
@@ -85,7 +85,7 @@ const handleLimit=(e)=>{
      setItemOffset(newOffset);
    
      navigate({
-      pathname: '/orderlist',
+      pathname: '/orderlist1',
       search: "?" + new URLSearchParams({ limit: limit }).toString() + "&&" + new URLSearchParams({ offset: newOffset }).toString()
     })
    }
@@ -98,7 +98,7 @@ const handleLimit=(e)=>{
   // },[])
   const changeUrl = () => {
     navigate({
-      pathname: '/orderlist',
+      pathname: '/orderlist1',
       search: "?" + new URLSearchParams({ limit: limit }).toString() + "&&" + new URLSearchParams({ offset: itemOffset }).toString()
     })
   }
@@ -177,8 +177,9 @@ setForcePage(0)
     <td>item-Name</td>
     <td>Unit Price</td>
     <td>Quantity</td>
-    <td>Amount</td>
+    <td>SubTotal</td>
     <td>Order Date</td>
+    <td>Gross Total</td>
 
 
 </tr>
@@ -192,12 +193,16 @@ setForcePage(0)
                 <td>{order.name}</td>
                 <td>{order.price}</td>
                 <td>{order.quantity}</td>
-                <td>{order.orderAmount}</td>
+                <td>{order.subTotal}</td>
                 <td>{order.orderDate}</td>
+                <td>{order.GrossTotal}</td>
             </tr>
         </>)
     })
 }
+<tr>
+<div style={{fontSize:"15px",fontWeight:"bold"}}>Total sal:  <span>{TotalSal}</span></div> 
+</tr>
 
 </table>
 <ul  className= 'd-flex align-content-left flex-wrap' >
@@ -286,11 +291,16 @@ setForcePage(0)
 export const PaginateOrderList = ({initialPage,items,from,to }) => {
     console.log(items)
     console.log(initialPage)
-    
+   const a= items.map(el=> el.GrossTotal)
+   console.log("gross totals are ",a)
+   const TotalSal= a.reduce((ack,val)=> ack + +val,0)
     
   return (
     <div>
+    
+      
            <Items1 
+           TotalSal={TotalSal}
            //currentItems={currentItems} 
       items={items} 
       initialPage={initialPage}

@@ -6,17 +6,17 @@ export const Order = ({item,addToCart,removeFromCart,GrossTotal}) => {
    const [pid,setPid] =useState(item.productId)
    const [quantity,setQuantity] =useState(item.amount)
               const navigate=   useNavigate()
-   const ConfirmOrder=()=>{
+  //  const ConfirmOrder=()=>{
    
-    navigate('/orderconfirm',{state:{Amount:Oamount,Pid:pid,Quantity:quantity}})
-   }
+  //   navigate('/orderconfirm',{state:{Amount:Oamount,Pid:pid,Quantity:quantity}})
+  //  }
    
   return (
     <div>
  <div >
        
       
-        <div style={{marginLeft:"50px",width:"200px"}} >
+        <div style={{marginLeft:"50px",width:"200px",height:"auto"}} >
             <h5>Name:{item.name}</h5>
             <h5>Pid:{item.productId}
             
@@ -59,11 +59,11 @@ export const Order = ({item,addToCart,removeFromCart,GrossTotal}) => {
             <img src={item.image}  alt={item.name} width="100px" height="100px" 
         style={{marginLeft:"50px"}}
         />
-        <div> <button onClick={ConfirmOrder}
+        {/* <div> <button onClick={ConfirmOrder}
         className="btn btn-md btn-success"
-        >OrderNow</button></div>
+        >OrderNow</button></div>*/}
        
-        </div>
+        </div> 
        
     </div>
    

@@ -27,6 +27,7 @@ import { ListTransactions } from './components/ListTransactions';
 import { TransactionContextProvider } from './context/TransactionContext';
 import { ListTransactionsNew } from './components/ListTransactionsNew';
 import { ConfirmOrder } from './components/ConfirmOrder';
+import { OrderList1 } from './components/layout/pages/Carts/OrderList1';
 
 const App = () => {
 
@@ -98,9 +99,10 @@ const App = () => {
             <Route exact path="/orderlist" element={<OrderList />}
               layout={CommonLayout}
             />
-            <Route exact path="/orderconfirm" element={<OrderConfirm />}
+            <Route exact path="/orderlist1" element={<OrderList1 />}/>
+            <Route exact path="/orderconfirm" element={<OrderConfirm/>} />
               layout={CommonLayout}
-            />
+            
             <Route exact path="/orderconfirmreducer" element={<OrderConfirmReducer />}
               layout={CommonLayout}
             />

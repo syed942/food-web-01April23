@@ -49,8 +49,6 @@ export default function Slider() {
                         
                         
                     <>
-                   
-                    
                         <img src={obj.image} alt="ll" className={styles.image}/>
                     </>
                       

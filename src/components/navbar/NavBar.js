@@ -36,7 +36,7 @@ export const NavBar = ({ logout }) => {
     const OrderList = () => {
 
         navigate({
-            pathname: '/orderlist',
+            pathname: '/orderlist1',
             search: '?limit=5&&offset=0',
         });
     }

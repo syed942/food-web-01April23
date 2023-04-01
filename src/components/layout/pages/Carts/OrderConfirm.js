@@ -10,15 +10,16 @@ export const OrderConfirm = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const [Odate, setOdate] = useState("2022-12-28")
+    const [orderMsg,setOrderMsg] = useState(false)
     console.log(Odate)
     const [OrderForm, setOrderForm] = useState({
         name: "",
-        Amount: location.state.Amount,
+       // Amount: location.state.Amount,
         daddress: "",
         contactNo: "",
 
-        quantity: location.state.Quantity,
-        id: location.state.Pid,
+      //  quantity: location.state.Quantity,
+      //  id: location.state.Pid,
 
     })
 
@@ -28,63 +29,67 @@ export const OrderConfirm = () => {
         setOdate(date)
 
     }
-    useEffect(() => {
-        // setOdate(Odate.getFullYear + '-' +
-        // ('00' + (Odate.getMonth() + 1)).slice(-2) + '-' +
-        // ('00' + Odate.getDate()).slice(-2) + ' ' +
-        // ('00' + Odate.getHours()).slice(-2) + ':' +
-        // ('00' + Odate.getMinutes()).slice(-2) + ':' +
-        // ('00' + Odate.getSeconds()).slice(-2))
-        // setOdate(Odate.getDate.toLocaleString())
-        // setOdate(Odate.getUTCFullYear() + '-' +
-        //     ('00' + (Odate.getUTCMonth() + 1)).slice(-2) + '-' +
-        //     ('00' + Odate.getUTCDate()).slice(-2) + ' ' +
-        //     ('00' + Odate.getUTCHours()).slice(-2) + ':' +
-        //     ('00' + Odate.getUTCMinutes()).slice(-2) + ':' +
-        //     ('00' + Odate.getUTCSeconds()).slice(-2))
-    }, [])
+   
     const HandleSubmit = (e) => {
-        // e.preventDefault();
-
-        console.log(Odate);
-        //console.log("form order summitte",OrderForm,Odate.toLocaleString())
+        e.preventDefault()
+       
         const formData = new FormData();
-        //formData.append('id', user.id);
         formData.append('name', OrderForm.name)
-        formData.append('amount', OrderForm.Amount);
-        formData.append('quantity', OrderForm.quantity);
-        formData.append('pid', OrderForm.id);
+         formData.append('Oid',location.state.maxOrderId+1 );
+      //   formData.append('GrossAmount', location.state.GrossAmount);
+      //  formData.append('pid', OrderForm.id);
         formData.append('odate', Odate);
         formData.append('address', OrderForm.daddress);
         formData.append('contactNo', OrderForm.contactNo);
-        // let url = "http://localhost/Server.php"
-        let url = "http://localhost/ReactApps/food-web/AddOrder.php"
-        axios.post(url, formData, {
-        })
-            .then(res => {
-                console.log(res.data);
-            })
-        //alert(`form is submittes ${OrderForm}`);
-        navigate("/shopping1")
+        for(let i=0;i<location.state.Pids.length;i++){
+            const amount= location.state.prices[i] * location.state.Quantities[i]
+            console.log("formDta",formData)
+           if(i !== location.state.Pids.length - 1){
+             
+              formData.append('GrossAmount', 0);
+           }else{
+              formData.append('GrossAmount', location.state.GrossAmount);
+           }
+           formData.append("pid",location.state.Pids[i])
+          // formData.append("names",Names[i])
+         //  formData.append("prices",prices[i])
+           formData.append("quantity", location.state.Quantities[i])
+           formData.append("subTotal", amount)
+           let url = "http://localhost/ReactApps/food-web/AddOrder1.php"
+           axios.post(url, formData, {
+           })
+               .then(res => {
+                   console.log(res.data);
+               })
+        }
+        // formData.append("key1", "value1");
+        // formData.append("key2", "value2");
+        
+        // // Display the values
+        // for (const value of formData.values()) {
+        //   console.log(value);
+        // }
+        setOrderMsg(true)
+       
     }
     const HandleChange = (e) => {
         setOrderForm({ ...OrderForm, [e.target.name]: e.target.value })
     }
-    const handleDateChange = (date) => {
-        // handleChange(date) {  
-        setOdate(date)
-
-    }
+    
 
 
     return (
         <div>
 
-            {/* <h3>Amount:{OrderForm.Amount}</h3>
-             <h3>Product Id: {OrderForm.id}</h3>
-             <h3>Quantity: {OrderForm.quantity}</h3>
-             <h4>Date order: {Odate.toLocaleString()}</h4> */}
+           
             <div className={styles.main}>
+            <div onClick={()=>setOrderMsg(!orderMsg)}  className={styles.orderConfirm}>
+                {
+                     orderMsg ? <div 
+                     className={styles.confirmOrderMessage}
+                     >Your Order placed successfully</div> :""
+                }
+            </div>
                 <h4 style={{textAlign:"center"}}>Order Particulars</h4>
                 <form onSubmit={(e) => HandleSubmit(e)}>
                     <table align='center'className={styles.table}>
@@ -125,7 +130,7 @@ export const OrderConfirm = () => {
                                 value={OrderForm.contactNo} name="contactNo" onChange={HandleChange} />
                             </td>
                         </tr>
-                        <tr>
+                        {/* <tr>
                             <td>
                                 <label htmlFor='ItemId'>
                                     Item Id:
@@ -137,8 +142,8 @@ export const OrderConfirm = () => {
                                 className="form-control"
                                 value={OrderForm.id} name="id"  />
                             </td>
-                        </tr>
-                        <tr>
+                        </tr> */}
+                        {/* <tr>
                             <td>
                                 <label htmlFor='amount'>
                                     Order Amount:
@@ -150,8 +155,8 @@ export const OrderConfirm = () => {
                                 className="form-control"
                                 amount value={OrderForm.Amount} name="Amount"  />
                             </td>
-                        </tr>
-                        <tr>
+                        </tr> */}
+                        {/* <tr>
                             <td>
                                 <label htmlFor='quantity'>
                                     Item Quantity:
@@ -163,7 +168,7 @@ export const OrderConfirm = () => {
                                 className="form-control"
                                 value={OrderForm.quantity} name="quantity"  />
                             </td>
-                        </tr>
+                        </tr> */}
                         <tr>
                             <td>
                                 <label htmlFor='date'>

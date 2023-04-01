@@ -140,7 +140,7 @@ useEffect(()=>{
                 return(<>
                     <div key={item.productId} className={styles.item}>
                       <span style={{fontSize:"14px",fontWeight:"bold"}}>Id: {item.productId}</span>
-                  <p style={{fontSize:"14px",fontWeight:"bold"}}>Name:    {item.name}</p>  
+                  <p style={{fontSize:"14px",fontWeight:"bold"}}>Namejji:    {item.name}</p>  
                   <p style={{fontSize:"14px",fontWeight:"bold"}}> Price:   {item.price}</p>
                         <img src={item.image} alt="ll" height="100px" width="100px"/>
                         <br/>

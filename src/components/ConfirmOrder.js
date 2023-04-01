@@ -6,6 +6,28 @@ import Datetime from 'react-datetime';
 import styles from '../components/layout/pages/Carts/OrderConfirm.module.css'
 import axios from 'axios'
 export const ConfirmOrder = () => {
+    const [maxId, setMaxId] = useState([]);
+    console.log("max is id ", maxId)
+  
+  
+    console.log("max is id ", typeof (maxId))
+    const CalculateTotal = (items) =>
+      items.reduce((ack, item) => ack + item.amount * item.price, 0);
+    // const GrossTotal = CalculateTotal(cartItems).toFixed(2)
+    const FetchData = async () => {
+      await axios.get('http://localhost/ReactApps/food-web/OrderId.php').then(res => {
+        console.log(res.data)
+        setMaxId(res.data)
+      })
+    }
+    useEffect(() => {
+      FetchData();
+  
+    }, [])
+    const Oids = maxId.map(el => el.orderId)
+    console.log(Oids)
+    const max = Math.max(...Oids);
+    console.log("max order id",max)
     const [ordermsg, setOrderMsg] = useState(false);
     const navigate = useNavigate()
     const loc = useLocation()
@@ -13,14 +35,15 @@ export const ConfirmOrder = () => {
     const name = loc.state.name;
     const price = loc.state.price;
     const quantity1 = +loc.state.quantity1;
-    const amount = loc.state.amount;
+    const GrossTotal = loc.state.GrossTotal;
+    console.log("GrossTotal is",GrossTotal)
 
 
     const [Odate, setOdate] = useState("2022-12-28")
     console.log(Odate)
     const [OrderForm, setOrderForm] = useState({
         name: "",
-        Amount: loc.state.amount,
+        subTotal: loc.state.subTotal,
         daddress: "",
         contactNo: "",
         price: loc.state.price,
@@ -42,16 +65,18 @@ export const ConfirmOrder = () => {
         console.log(Odate);
         //console.log("form order summitte",OrderForm,Odate.toLocaleString())
         const formData = new FormData();
-        //formData.append('id', user.id);
+        formData.append('Oid', max +1);
         formData.append('name', OrderForm.name)
-        formData.append('amount', OrderForm.Amount);
+        formData.append('subTotal', OrderForm.subTotal);
         formData.append('quantity', OrderForm.quantity);
         formData.append('pid', OrderForm.id);
         formData.append('odate', Odate);
+        formData.append('GrossAmount',GrossTotal);
         formData.append('address', OrderForm.daddress);
         formData.append('contactNo', OrderForm.contactNo);
         // let url = "http://localhost/Server.php"
-        let url = "http://localhost/ReactApps/food-web/AddOrder.php"
+        // let url = "http://localhost/ReactApps/food-web/AddOrder.php"
+        let url = "http://localhost/ReactApps/food-web/AddOrder1.php"
         axios.post(url, formData, {
         })
             .then(res => {
@@ -180,7 +205,7 @@ export const ConfirmOrder = () => {
                             <td>
                                 <input type="number" id="amount" style={{ width: "90%" }}
                                     className="form-control"
-                                    amount value={OrderForm.Amount} name="Amount" />
+                                    amount value={OrderForm.subTotal} name="Amount" />
                             </td>
                         </tr>
 

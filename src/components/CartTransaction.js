@@ -24,10 +24,11 @@ const AddItem=(prod)=>{
     // const GrossTotal=CalculateTotal(cart).toFixed(2);
 //},[cart])
 const HandleOrder=(prod)=>{
-  const amount=  prod.quantity1 * prod.price
+  const subTotal=  prod.quantity1 * prod.price
+  const GrossTotal=prod.quantity1 * prod.price
  
     navigate('/ConfirmOrder',{state:{name:prod.name,id:prod.productId,price:prod.price,quantity1:prod.quantity1,
-    amount:amount
+    subTotal:subTotal,GrossTotal:GrossTotal
     }});
 
 }
